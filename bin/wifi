@@ -1,0 +1,25 @@
+#!/bin/sh
+
+DEVICE=iwn0
+
+if [ "$1" = "off" ]; then
+	ifconfig $DEVICE down 
+	PROC=`pgrep 'dhclient $DEVICE'`
+	[ -z "$PROC" ] || kill $PROC
+	exit
+fi
+
+ifconfig $DEVICE up
+
+printf "ssid: "
+read SSID
+
+printf "key (no echo): "
+
+stty -echo
+read KEY
+stty echo
+printf "\n"
+
+ifconfig $DEVICE join "$SSID" wpakey "$KEY" || (echo failed; ifconfig $DEVICE down)
+dhclient $DEVICE
