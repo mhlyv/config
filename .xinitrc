@@ -1,16 +1,16 @@
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Timeout" 50
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Inertia" 3
-xinput set-prop "/dev/wsmouse" "Device Accel Constant Emulation Inertia" 0.4
+xsetroot -solid '#111111'
+set -b off
 
-xsetroot -solid "#111111" &
-eval status &
+mv -f ~/.config/pulse ~/.config/pulse.old
+pulseaudio --start -D
+pactl set-sink-mute 0 1
+pactl set-source-mute 1 1
 
 while true; do
-	xsetroot -name " battery: $(apm -l)% time: $(date +%H:%M) "
+	xsetroot -name " $(cat /sys/class/power_supply/BAT0/capacity)% $(date +%H:%M) "
 	sleep 1
 done &
+
+setxkbmap -option compose:ralt
 
 dwm

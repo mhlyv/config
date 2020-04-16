@@ -88,11 +88,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("mixerctl outputs.master=+5") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("mixerctl outputs.master=-5") },
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("mute-toggle") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("doas light -A 5%") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("doas light -U 5%") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +5%") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -5%") },
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pactl set-sink-mute 0 toggle") },
+	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute 1 toggle") },
 };
 
 /* button definitions */
