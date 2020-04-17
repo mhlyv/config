@@ -1,0 +1,85 @@
+# UTF-8 (Unicode) compose sequence
+# David.Monniaux@ens.fr
+#
+
+<Multi_key> <comma> <minus>      	: "¬"   notsign # NOT SIGN
+<Multi_key> <minus> <comma>      	: "¬"   notsign # NOT SIGN
+
+<Multi_key> <1> <4>              	: "¼"   onequarter # VULGAR FRACTION ONE QUARTER
+<Multi_key> <1> <2>              	: "½"   onehalf # VULGAR FRACTION ONE HALF
+<Multi_key> <3> <4>              	: "¾"   threequarters # VULGAR FRACTION THREE QUARTERS
+
+<dead_acute> <A>                 	: "Á"   Aacute # LATIN CAPITAL LETTER A WITH ACUTE
+<Multi_key> <acute> <A>          	: "Á"   Aacute # LATIN CAPITAL LETTER A WITH ACUTE
+<Multi_key> <A> <acute> 		: "Á"   Aacute # LATIN CAPITAL LETTER A WITH ACUTE
+<Multi_key> <apostrophe> <A>     	: "Á"   Aacute # LATIN CAPITAL LETTER A WITH ACUTE
+<Multi_key> <A> <apostrophe> 		: "Á"   Aacute # LATIN CAPITAL LETTER A WITH ACUTE
+<dead_acute> <a>                 	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <acute> <a>          	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <a> <acute> 		: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <apostrophe> <a>     	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <a> <apostrophe> 		: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+
+<dead_acute> <E>                 	: "É"   Eacute # LATIN CAPITAL LETTER E WITH ACUTE
+<Multi_key> <acute> <E>          	: "É"   Eacute # LATIN CAPITAL LETTER E WITH ACUTE
+<Multi_key> <E> <acute> 		: "É"   Eacute # LATIN CAPITAL LETTER E WITH ACUTE
+<Multi_key> <apostrophe> <E>     	: "É"   Eacute # LATIN CAPITAL LETTER E WITH ACUTE
+<Multi_key> <E> <apostrophe> 		: "É"   Eacute # LATIN CAPITAL LETTER E WITH ACUTE
+<dead_acute> <e>                 	: "é"   eacute # LATIN SMALL LETTER E WITH ACUTE
+<Multi_key> <acute> <e>          	: "é"   eacute # LATIN SMALL LETTER E WITH ACUTE
+<Multi_key> <e> <acute> 		: "é"   eacute # LATIN SMALL LETTER E WITH ACUTE
+<Multi_key> <apostrophe> <e>     	: "é"   eacute # LATIN SMALL LETTER E WITH ACUTE
+<Multi_key> <e> <apostrophe> 		: "é"   eacute # LATIN SMALL LETTER E WITH ACUTE
+
+<dead_acute> <I>                 	: "Í"   Iacute # LATIN CAPITAL LETTER I WITH ACUTE
+<Multi_key> <acute> <I>          	: "Í"   Iacute # LATIN CAPITAL LETTER I WITH ACUTE
+<Multi_key> <I> <acute> 		: "Í"   Iacute # LATIN CAPITAL LETTER I WITH ACUTE
+<Multi_key> <apostrophe> <I>     	: "Í"   Iacute # LATIN CAPITAL LETTER I WITH ACUTE
+<Multi_key> <I> <apostrophe> 		: "Í"   Iacute # LATIN CAPITAL LETTER I WITH ACUTE
+<dead_acute> <i>                 	: "í"   iacute # LATIN SMALL LETTER I WITH ACUTE
+<Multi_key> <acute> <i>          	: "í"   iacute # LATIN SMALL LETTER I WITH ACUTE
+<Multi_key> <i> <acute> 		: "í"   iacute # LATIN SMALL LETTER I WITH ACUTE
+<Multi_key> <apostrophe> <i>     	: "í"   iacute # LATIN SMALL LETTER I WITH ACUTE
+<Multi_key> <i> <apostrophe> 		: "í"   iacute # LATIN SMALL LETTER I WITH ACUTE
+
+<dead_acute> <O>                 	: "Ó"   Oacute # LATIN CAPITAL LETTER O WITH ACUTE
+<Multi_key> <acute> <O>          	: "Ó"   Oacute # LATIN CAPITAL LETTER O WITH ACUTE
+<Multi_key> <O> <acute> 		: "Ó"   Oacute # LATIN CAPITAL LETTER O WITH ACUTE
+<Multi_key> <apostrophe> <O>     	: "Ó"   Oacute # LATIN CAPITAL LETTER O WITH ACUTE
+<Multi_key> <O> <apostrophe>     	: "Ó"   Oacute # LATIN CAPITAL LETTER O WITH ACUTE
+<dead_acute> <o>                 	: "ó"   oacute # LATIN SMALL LETTER O WITH ACUTE
+<Multi_key> <acute> <o>          	: "ó"   oacute # LATIN SMALL LETTER O WITH ACUTE
+<Multi_key> <o> <acute> 		: "ó"   oacute # LATIN SMALL LETTER O WITH ACUTE
+<Multi_key> <apostrophe> <o>     	: "ó"   oacute # LATIN SMALL LETTER O WITH ACUTE
+<Multi_key> <o> <apostrophe>     	: "ó"   oacute # LATIN SMALL LETTER O WITH ACUTE
+
+<dead_acute> <U>                 	: "Ú"   Uacute # LATIN CAPITAL LETTER U WITH ACUTE
+<Multi_key> <acute> <U>          	: "Ú"   Uacute # LATIN CAPITAL LETTER U WITH ACUTE
+<Multi_key> <U> <acute> 		: "Ú"   Uacute # LATIN CAPITAL LETTER U WITH ACUTE
+<Multi_key> <apostrophe> <U>     	: "Ú"   Uacute # LATIN CAPITAL LETTER U WITH ACUTE
+<Multi_key> <U> <apostrophe> 		: "Ú"   Uacute # LATIN CAPITAL LETTER U WITH ACUTE
+<dead_acute> <u>                 	: "ú"   uacute # LATIN SMALL LETTER U WITH ACUTE
+<Multi_key> <acute> <u>          	: "ú"   uacute # LATIN SMALL LETTER U WITH ACUTE
+<Multi_key> <u> <acute> 		: "ú"   uacute # LATIN SMALL LETTER U WITH ACUTE
+<Multi_key> <apostrophe> <u>     	: "ú"   uacute # LATIN SMALL LETTER U WITH ACUTE
+<Multi_key> <u> <apostrophe> 		: "ú"   uacute # LATIN SMALL LETTER U WITH ACUTE
+
+<Multi_key> <period> <O> 		: "Ö"   Odiaeresis # LATIN CAPITAL LETTER O WITH DIAERESIS
+<Multi_key> <O> <period> 		: "Ö"   Odiaeresis # LATIN CAPITAL LETTER O WITH DIAERESIS
+<Multi_key> <o> <period> 		: "ö"   odiaeresis # LATIN SMALL LETTER O WITH DIAERESIS
+<Multi_key> <period> <o> 		: "ö"   odiaeresis # LATIN SMALL LETTER O WITH DIAERESIS
+
+<Multi_key> <period> <U> 		: "Ü"   Udiaeresis # LATIN CAPITAL LETTER U WITH DIAERESIS
+<Multi_key> <U> <period> 		: "Ü"   Udiaeresis # LATIN CAPITAL LETTER U WITH DIAERESIS
+<Multi_key> <period> <u> 		: "ü"   udiaeresis # LATIN SMALL LETTER U WITH DIAERESIS
+<Multi_key> <u> <period> 		: "ü"   udiaeresis # LATIN SMALL LETTER U WITH DIAERESIS
+
+<dead_doubleacute> <O>           	: "Ő"   U0150 # LATIN CAPITAL LETTER O WITH DOUBLE ACUTE
+<Multi_key> <equal> <O>          	: "Ő"   U0150 # LATIN CAPITAL LETTER O WITH DOUBLE ACUTE
+<dead_doubleacute> <o>           	: "ő"   U0151 # LATIN SMALL LETTER O WITH DOUBLE ACUTE
+<Multi_key> <equal> <o>          	: "ő"   U0151 # LATIN SMALL LETTER O WITH DOUBLE ACUTE
+
+<dead_doubleacute> <U>           	: "Ű"   U0170 # LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
+<Multi_key> <equal> <U>          	: "Ű"   U0170 # LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
+<dead_doubleacute> <u>           	: "ű"   U0171 # LATIN SMALL LETTER U WITH DOUBLE ACUTE
+<Multi_key> <equal> <u>          	: "ű"   U0171 # LATIN SMALL LETTER U WITH DOUBLE ACUTE
