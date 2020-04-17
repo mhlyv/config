@@ -1,0 +1,4 @@
+media-libs/libglvnd X
+x11-libs/cairo X
+dev-cpp/gtkmm X
+dev-libs/glib dbus

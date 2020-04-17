@@ -1,0 +1,3 @@
+media-video/ffmpeg X alsa codec2 cuda jack mp3 mp4 opus pulseaudio sdl
+media-sound/pulseaudio X alsa alsa-plugin asyncns equalizer jack libsamplerate realtime dbus
+media-video/mpv -debug cli libmpv X alsa cuda dvd jack -jpeg pulseaudio sdl
