@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sleep 0.1
-
-(pgrep -lf mute-toggle | grep sh) || mixerctl -t outputs.master.mute

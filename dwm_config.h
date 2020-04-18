@@ -1,15 +1,16 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 8;        /* border pexel of windows */
 static const unsigned int snap      = 4;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Liberation Mono:size=9" };
+static const char *fonts[]          = { "monospace:size=9" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#ffffff", "#222222", "#000000" },
-	[SchemeSel]  = { "#ffffff", "#005577", "#000000" },
+	[SchemeNorm] = { "#ffffff", "#222222", "#222222" },
+	[SchemeSel]  = { "#ffffff", "#005577", "#005577" },
 };
 
 /* tagging */
@@ -78,6 +79,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -88,8 +92,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("doas light -A 5%") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("doas light -U 5%") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("light -A 5%") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("light -U 5%") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +5%") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -5%") },
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pactl set-sink-mute 0 toggle") },

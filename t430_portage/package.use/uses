@@ -1,0 +1,17 @@
+sys-boot/grub -sdl
+sys-devel/llvm debug
+sys-auth/polkit elogind
+
+dev-lang/python sqlite
+dev-cpp/gtkmm X
+dev-libs/glib dbus
+
+x11-libs/cairo X
+app-text/poppler cairo
+
+media-libs/libglvnd X
+media-libs/libsdl2 X opengl
+media-video/ffmpeg X alsa codec2 cuda jack mp3 mp4 opus pulseaudio sdl openssl
+media-sound/pulseaudio X alsa alsa-plugin asyncns equalizer jack libsamplerate realtime dbus
+media-video/mpv -debug cli libmpv X alsa cuda dvd jack -jpeg pulseaudio sdl
+media-gfx/imagemagick jpeg png

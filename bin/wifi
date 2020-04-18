@@ -1,25 +1,13 @@
 #!/bin/sh
 
-DEVICE=iwn0
-
-if [ "$1" = "off" ]; then
-	ifconfig $DEVICE down 
-	PROC=`pgrep 'dhclient $DEVICE'`
-	[ -z "$PROC" ] || kill $PROC
-	exit
-fi
-
-ifconfig $DEVICE up
-
 printf "ssid: "
 read SSID
 
-printf "key (no echo): "
+MATCH=$(grep "\"$SSID\"" /etc/wpa_supplicant.conf)
 
-stty -echo
-read KEY
-stty echo
-printf "\n"
+if [ -z "$MATCH" ]; then
+	printf "key: "
+	wpa_passphrase "$SSID" >> /etc/wpa_supplicant.conf
+fi
 
-ifconfig $DEVICE join "$SSID" wpakey "$KEY" || (echo failed; ifconfig $DEVICE down)
-dhclient $DEVICE
+wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant.conf
