@@ -11,13 +11,15 @@ static int borderpx = 0;
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
- * 2: utmp option
+ * 2: scroll and/or utmp
  * 3: SHELL environment variable
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
 static char *shell = "/bin/sh";
 char *utmp = NULL;
+/* scroll program: to enable use a string like "scroll" */
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -82,7 +84,9 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+	/* 8 normal colors */
 	"#000000",
 	"#ff0000",
 	"#00ff00",
@@ -92,6 +96,7 @@ static const char *colorname[] = {
 	"#00ffff",
 	"#ffffff",
 
+	/* 8 bright colors */
 	"#000000",
 	"#ff0000",
 	"#00ff00",
@@ -103,6 +108,7 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
+	/* more colors can be added after 255 to use with DefaultXX */
 	"#000000",
 	"#ffffff",
 };
@@ -182,6 +188,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ TERMMOD,              XK_X,           invert,         {.i =  0} },
 };
 
 /*
