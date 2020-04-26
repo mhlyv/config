@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:size=9:antialias=true:autohint=true";
+static char *font = "PT Mono:size=9";
 static int borderpx = 0;
 
 /*
@@ -97,7 +97,7 @@ static const char *colorname[] = {
 	"#ffffff",
 
 	/* 8 bright colors */
-	"#000000",
+	"#ffffff",
 	"#ff0000",
 	"#00ff00",
 	"#ffff00",

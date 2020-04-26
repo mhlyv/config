@@ -1,4 +1,4 @@
-font pango:monospace 8
+font pango: PT Mono 8
 for_window [class=".*"] border pixel 2
 default_border pixel 2
 
@@ -21,7 +21,7 @@ client.urgent           $shade3  $shade2  #888888  $shade3    $shade3
 client.background       #ffffff
 
 bar {
-	font pango:monospace 8
+	font pango: PT Mono 8
 	position top
 	status_command status
 
