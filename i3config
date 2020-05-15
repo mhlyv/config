@@ -1,4 +1,4 @@
-font pango: PT Mono 8
+font pango: monospace 8
 for_window [class=".*"] border pixel 2
 default_border pixel 2
 
@@ -13,17 +13,17 @@ set $shade6 #977fb2
 exec_always --no-startup-id xsetroot -solid "$shade0"
 
 # class                 border   backgr.  text     indicator  child_border
-client.unfocused        $shade3  $shade2  #888888  $shade3    $shade3
+client.unfocused        $shade3  $shade2  $shade6  $shade3    $shade3
 client.focused_inactive $shade4  $shade3  #ffffff  $shade4    $shade4
 client.focused          $shade5  $shade4  #ffffff  $shade6    $shade5
-client.placeholder      $shade3  $shade2  #888888  $shade3    $shade3
-client.urgent           $shade3  $shade2  #888888  $shade3    $shade3
+client.placeholder      $shade3  $shade2  $shade6  $shade3    $shade3
+client.urgent           $shade3  $shade2  $shade6  $shade3    $shade3
 client.background       #ffffff
 
 bar {
-	font pango: PT Mono 8
+	font pango: monospace 8
 	position top
-	status_command status
+	status_command while true; do echo " [$(cat /sys/class/power_supply/BAT0/capacity)%] [$(date +%H:%M)] " && sleep 1; done
 
 	colors {
 		background $shade1
@@ -46,8 +46,8 @@ set $right l
 set $mod Mod4
 
 bindsym $mod+Shift+q kill
-bindsym $mod+Return           exec --no-startup-id st
-bindsym $mod+p                exec --no-startup-id dmenu_run -c -l 20 -nb "$shade1" -sf "#ffffff" -sb "$shade5" -sf "#ffffff"
+bindsym $mod+Return           exec --no-startup-id alacritty
+bindsym $mod+p                exec --no-startup-id dmenu_run -nb "$shade1" -sf "#ffffff" -sb "$shade5" -sf "#ffffff"
 bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5%
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5%
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume 0 +5%
